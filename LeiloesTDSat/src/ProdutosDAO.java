@@ -23,7 +23,7 @@ public class ProdutosDAO {
     ResultSet resultset;
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
     
-    public boolean venderProduto(int id) {
+    public boolean venderProduto(int id)  {
     conn = new conectaDAO().connectDB();
     
     try {
@@ -37,9 +37,6 @@ public class ProdutosDAO {
         return false;
     }
 }
-
-    
-    
     
     public boolean cadastrarProduto (ProdutosDTO produto){
 conn = new conectaDAO().connectDB();
@@ -103,11 +100,6 @@ public ArrayList<ProdutosDTO> listarProdutosVendidos(){
         }
         
         return listagem;
-    }
-
-    
-    
-    
-        
+    }      
 }
 
