@@ -72,6 +72,7 @@ public ArrayList<ProdutosDTO> listarProdutosVendidos(){
             
             listagem.add(produto);
         }
+        
     } catch (SQLException erro) {
         JOptionPane.showMessageDialog(null, "ProdutosDAO Listar Vendidos: " + erro);
     }
