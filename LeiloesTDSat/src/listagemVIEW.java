@@ -7,7 +7,6 @@ import javax.swing.table.DefaultTableModel;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Adm
@@ -137,21 +136,21 @@ public class listagemVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
- int id = Integer.parseInt(id_produto_venda.getText());
-    ProdutosDAO produtosdao = new ProdutosDAO();
+        int id = Integer.parseInt(id_produto_venda.getText());
+        ProdutosDAO produtosdao = new ProdutosDAO();
 
-    if (produtosdao.venderProduto(id)) {
-        JOptionPane.showMessageDialog(null, "Produto vendido com sucesso!");
-        listarProdutos();
-    } else {
-        JOptionPane.showMessageDialog(null, "Erro ao vender produto!");
-    }
+        if (produtosdao.venderProduto(id)) {
+            JOptionPane.showMessageDialog(null, "Produto vendido com sucesso!");
+            listarProdutos();
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao vender produto!");
+        }
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
 
-    vendasVIEW vendas = new vendasVIEW();
-    vendas.setVisible(true);
+        vendasVIEW vendas = new vendasVIEW();
+        vendas.setVisible(true);
 
     }//GEN-LAST:event_btnVendasActionPerformed
 
@@ -207,26 +206,26 @@ public class listagemVIEW extends javax.swing.JFrame {
     private javax.swing.JTable listaProdutos;
     // End of variables declaration//GEN-END:variables
 
-    private void listarProdutos(){
+    private void listarProdutos() {
         try {
             ProdutosDAO produtosdao = new ProdutosDAO();
-            
+
             DefaultTableModel model = (DefaultTableModel) listaProdutos.getModel();
             model.setNumRows(0);
-            
+
             ArrayList<ProdutosDTO> listagem = produtosdao.listarProdutos();
-            
-                   for (ProdutosDTO produto : listagem) {
-            model.addRow(new Object[]{
-                produto.getId(),
-                produto.getNome(),
-                produto.getValor(),
-                produto.getStatus()
-            });
+
+            for (ProdutosDTO produto : listagem) {
+                model.addRow(new Object[]{
+                    produto.getId(),
+                    produto.getNome(),
+                    produto.getValor(),
+                    produto.getStatus()
+                });
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao listar produtos: " + e.getMessage());
         }
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao listar produtos: " + e.getMessage());
-    }
-    
+
     }
 }
