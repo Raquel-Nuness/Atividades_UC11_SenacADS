@@ -1,0 +1,28 @@
+COMANDOS DIGITADOS
+
+git checkout -b melhorias
+git push -u origin melhorias
+
+git add ProdutosDAO.java
+git commit -m "Adicionar operação venderProduto() em ProdutosDAO"
+git push
+
+git add ProdutosDAO.java
+git commit -m "Adicionar operação listarProdutosVendidos() em ProdutosDAO"
+git push
+
+git add vendasVIEW.java
+git commit -m "Criar a tela de Vendas para listar produtos vendidos"
+git push
+
+git add listagemVIEW.java
+git commit -m "Implementar funcionalidade venderProduto na tela de listagem"
+git push
+
+git add listagemVIEW.java
+git commit -m "Implementar navegação no botão Consultar Vendas para abrir a tela de Vendas"
+git push
+
+git checkout main
+git merge melhorias
+git push
